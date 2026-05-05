@@ -74,7 +74,10 @@ final class SeparationPipeline {
     private func makeSeparator() throws -> DemucsSeparator {
         if let existing = separator { return existing }
         do {
-            let s = try DemucsSeparator(modelName: "htdemucs_ft")
+            let s = try DemucsSeparator(
+                modelName: "htdemucs_ft",
+                modelDirectory: ModelManager.shared.modelDirectory
+            )
             separator = s
             return s
         } catch {

@@ -55,16 +55,25 @@ struct LoadedView: View {
     }
 
     private func separate() async {
-        await MainActor.run { state.phase = .processing(progress: 0) }
         do {
+            if !ModelManager.shared.isModelDownloaded {
+                state.phase = .downloading(progress: 0)
+                try await ModelManager.shared.ensureModel { progress in
+                    Task { @MainActor in
+                        state.phase = .downloading(progress: progress)
+                    }
+                }
+            }
+
+            state.phase = .processing(progress: 0)
             let result = try await SeparationPipeline.shared.run(source: source) { progress in
                 Task { @MainActor in
                     state.phase = .processing(progress: progress)
                 }
             }
-            await MainActor.run { state.phase = .done(result) }
+            state.phase = .done(result)
         } catch {
-            await MainActor.run { state.phase = .failed(error.localizedDescription) }
+            state.phase = .failed(error.localizedDescription)
         }
     }
 }
