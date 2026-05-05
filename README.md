@@ -10,6 +10,10 @@ A native macOS app for audio stem separation — isolate vocals, drums, bass, an
 ![Swift](https://img.shields.io/badge/Swift-6-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+<p align="center">
+  <img src="capture.png" width="720" alt="Stem — stem separation result view">
+</p>
+
 ## Features
 
 - **Drag & drop** any audio file (MP3, WAV, AIFF, M4A)
