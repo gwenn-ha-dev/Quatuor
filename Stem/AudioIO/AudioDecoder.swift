@@ -18,7 +18,7 @@ enum AudioDecoder {
     /// Computes waveform peaks and metadata by streaming the file in small chunks,
     /// without loading the entire PCM buffer into memory.
     static func preview(url: URL) async throws -> LoadedSource {
-        try await Task.detached(priority: .userInitiated) {
+        return try await Task.detached(priority: .userInitiated) {
             let file = try AVAudioFile(forReading: url)
             let format = file.processingFormat
             let totalFrames = Int(file.length)
@@ -39,7 +39,13 @@ enum AudioDecoder {
             var bucketCount = 0
 
             while file.framePosition < file.length {
-                try file.read(into: buffer)
+                // AVAudioFile.length is an estimate for compressed formats (MP3, AAC).
+                // Reading the final partial chunk can fail — treat as EOF.
+                do {
+                    try file.read(into: buffer)
+                } catch {
+                    break
+                }
                 let frames = Int(buffer.frameLength)
                 guard frames > 0, let channelData = buffer.floatChannelData else { break }
 

@@ -16,12 +16,15 @@ final class AppState {
         case failed(String)
     }
 
-    var phase: Phase = .idle
+    var phase: Phase = .idle {
+        didSet {
+            if case .done(let result) = oldValue {
+                result.cleanUp()
+            }
+        }
+    }
 
     func reset() {
-        if case .done(let result) = phase {
-            result.cleanUp()
-        }
         phase = .idle
     }
 }
