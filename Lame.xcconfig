@@ -1,0 +1,9 @@
+// Lame.xcconfig
+// Build settings for linking libmp3lame (static, arm64).
+// Include this file in both Debug and Release configurations
+// via Project → Info → Configurations in Xcode.
+
+HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT)/ThirdParty/lame/include
+LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/ThirdParty/lame/lib
+OTHER_LDFLAGS = $(inherited) -lmp3lame
+SWIFT_OBJC_BRIDGING_HEADER = Stem/AudioIO/lame-bridge.h
