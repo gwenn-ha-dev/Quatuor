@@ -36,7 +36,7 @@ A native macOS app for audio stem separation — isolate vocals, drums, bass, an
 ### 1. Clone
 
 ```bash
-git clone https://github.com/gwenn-ha-dev/Stem.git
+git clone https://github.com/gwenn-ha-dev/StemByMe.git
 cd Stem
 ```
 
