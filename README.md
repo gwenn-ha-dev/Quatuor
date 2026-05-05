@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" width="128" alt="Stem icon">
+</p>
+
 # Stem
 
 A native macOS app for audio stem separation — isolate vocals, drums, bass, and other instruments from any song using state-of-the-art deep learning, running entirely on Apple Silicon GPU.
