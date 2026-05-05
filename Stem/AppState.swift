@@ -10,6 +10,7 @@ final class AppState {
         case idle
         case loading(fileName: String)
         case loaded(LoadedSource)
+        case downloading(progress: Double)
         case processing(progress: Double)
         case done(SeparationResult)
         case failed(String)

@@ -15,6 +15,8 @@ struct ContentView: View {
                 LoadingView(fileName: fileName)
             case .loaded(let source):
                 LoadedView(source: source)
+            case .downloading(let progress):
+                DownloadingView(progress: progress)
             case .processing(let progress):
                 ProcessingView(progress: progress)
             case .done(let result):
@@ -41,6 +43,7 @@ struct ContentView: View {
         case .idle: "idle"
         case .loading: "loading"
         case .loaded: "loaded"
+        case .downloading: "downloading"
         case .processing: "processing"
         case .done: "done"
         case .failed: "failed"
