@@ -74,10 +74,10 @@ enum StemKind: String, CaseIterable {
 
     var label: String {
         switch self {
-        case .vocals: "Voix"
-        case .drums:  "Batterie"
-        case .bass:   "Basse"
-        case .other:  "Autres"
+        case .vocals: String(localized: "Voix")
+        case .drums:  String(localized: "Batterie")
+        case .bass:   String(localized: "Basse")
+        case .other:  String(localized: "Autres")
         }
     }
 }

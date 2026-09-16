@@ -19,13 +19,8 @@ Package.resolved
 # Third-party binaries built by scripts (reproducible via fetch + build scripts)
 ThirdParty/lame-src/
 ThirdParty/lame/
-ThirdParty/onnxruntime/
-ThirdParty/onnxruntime.xcframework/
-ThirdParty/include/
-ThirdParty/lib/
 
-# Model weights (auto-downloaded from HuggingFace on first run, or via fetch_models.sh)
-Models/
+# Model weights (auto-downloaded from HuggingFace into ~/Library/Caches on first run)
 *.safetensors
 
 # Temporaires

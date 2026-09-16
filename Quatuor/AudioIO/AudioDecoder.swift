@@ -6,11 +6,9 @@ import AVFoundation
 enum AudioDecoder {
     enum Error: LocalizedError {
         case unreadable(URL)
-        case unsupportedFormat
         var errorDescription: String? {
             switch self {
-            case .unreadable(let url): "Impossible de lire \(url.lastPathComponent)"
-            case .unsupportedFormat:   "Format audio non supporté"
+            case .unreadable(let url): String(localized: "Impossible de lire \(url.lastPathComponent)")
             }
         }
     }

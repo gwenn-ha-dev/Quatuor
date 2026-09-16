@@ -18,19 +18,14 @@ final class SeparationPipeline {
         case unknownStem(String)
         var errorDescription: String? {
             switch self {
-            case .separatorInit(let m): "Chargement du modèle htdemucs_ft échoué : \(m)"
-            case .inferenceFailed(let m): "Séparation échouée : \(m)"
-            case .unknownStem(let n):  "Stem inconnu retourné par le modèle : \(n)"
+            case .separatorInit(let m): String(localized: "Chargement du modèle htdemucs_ft échoué : \(m)")
+            case .inferenceFailed(let m): String(localized: "Séparation échouée : \(m)")
+            case .unknownStem(let n):  String(localized: "Stem inconnu retourné par le modèle : \(n)")
             }
         }
     }
 
     private var separator: DemucsSeparator?
-    private var currentCancelToken: DemucsCancelToken?
-
-    func cancel() {
-        currentCancelToken?.cancel()
-    }
 
     func run(
         source: LoadedSource,
@@ -38,7 +33,6 @@ final class SeparationPipeline {
     ) async throws -> SeparationResult {
         let separator = try makeSeparator()
         let token = DemucsCancelToken()
-        currentCancelToken = token
 
         let previousCacheLimit = Memory.cacheLimit
         let available = Self.availableSystemMemory()
@@ -47,7 +41,6 @@ final class SeparationPipeline {
         }
 
         defer {
-            currentCancelToken = nil
             self.separator = nil
             Memory.clearCache()
             Memory.cacheLimit = previousCacheLimit
