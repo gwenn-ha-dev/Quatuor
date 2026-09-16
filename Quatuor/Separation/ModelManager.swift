@@ -12,9 +12,9 @@ final class ModelManager {
     ]
 
     var modelDirectory: URL {
-        let appSupport = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        return appSupport
-            .appendingPathComponent("Stem", isDirectory: true)
+        let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        return caches
+            .appendingPathComponent("Quatuor", isDirectory: true)
             .appendingPathComponent("Models", isDirectory: true)
             .appendingPathComponent(Self.modelName, isDirectory: true)
     }

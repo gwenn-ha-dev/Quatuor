@@ -85,7 +85,7 @@ final class SeparationPipeline {
         source: LoadedSource
     ) throws -> SeparationResult {
         let tempDir = FileManager.default.temporaryDirectory
-            .appendingPathComponent("Stem-\(UUID().uuidString)", isDirectory: true)
+            .appendingPathComponent("Quatuor-\(UUID().uuidString)", isDirectory: true)
         try FileManager.default.createDirectory(at: tempDir, withIntermediateDirectories: true)
 
         var stems: [SeparationResult.Stem] = []
