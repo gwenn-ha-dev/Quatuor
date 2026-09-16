@@ -1,13 +1,13 @@
 //
-//  StemUITests.swift
-//  StemUITests
+//  QuatuorUITests.swift
+//  QuatuorUITests
 //
 //  Created by Thierry on 05/05/2026.
 //
 
 import XCTest
 
-final class StemUITests: XCTestCase {
+final class QuatuorUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E48562D62FAA0C9F00AE0E92"
-               BuildableName = "Stem.app"
-               BlueprintName = "Stem"
-               ReferencedContainer = "container:Stem.xcodeproj">
+               BuildableName = "Quatuor.app"
+               BlueprintName = "Quatuor"
+               ReferencedContainer = "container:Quatuor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E48562E32FAA0CA000AE0E92"
-               BuildableName = "StemTests.xctest"
-               BlueprintName = "StemTests"
-               ReferencedContainer = "container:Stem.xcodeproj">
+               BuildableName = "QuatuorTests.xctest"
+               BlueprintName = "QuatuorTests"
+               ReferencedContainer = "container:Quatuor.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E48562ED2FAA0CA000AE0E92"
-               BuildableName = "StemUITests.xctest"
-               BlueprintName = "StemUITests"
-               ReferencedContainer = "container:Stem.xcodeproj">
+               BuildableName = "QuatuorUITests.xctest"
+               BlueprintName = "QuatuorUITests"
+               ReferencedContainer = "container:Quatuor.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E48562D62FAA0C9F00AE0E92"
-            BuildableName = "Stem.app"
-            BlueprintName = "Stem"
-            ReferencedContainer = "container:Stem.xcodeproj">
+            BuildableName = "Quatuor.app"
+            BlueprintName = "Quatuor"
+            ReferencedContainer = "container:Quatuor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -88,9 +88,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E48562D62FAA0C9F00AE0E92"
-            BuildableName = "Stem.app"
-            BlueprintName = "Stem"
-            ReferencedContainer = "container:Stem.xcodeproj">
+            BuildableName = "Quatuor.app"
+            BlueprintName = "Quatuor"
+            ReferencedContainer = "container:Quatuor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

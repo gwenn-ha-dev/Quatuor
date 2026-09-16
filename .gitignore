@@ -35,3 +35,29 @@ Models/
 .claude/
 dist/
 *.app
+
+# --- charte gwenn-ha-dev ---
+# Build artefacts
+*.dSYM
+*.o
+*.xcarchive
+
+*.xcscmblueprint
+
+# Generated intermediates (the .icns itself IS versioned)
+Resources/AppIcon.iconset/
+
+# Downloaded models and datasets
+*.ckpt
+*.mlmodelc
+
+._*
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.p12
+*.mobileprovision
