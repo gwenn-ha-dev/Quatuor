@@ -24,7 +24,7 @@ final class ModelManager {
         return Self.files.allSatisfy { fm.fileExists(atPath: modelDirectory.appendingPathComponent($0).path) }
     }
 
-    func ensureModel(progress: @escaping (Double) -> Void) async throws {
+    func ensureModel(progress: @escaping @Sendable (Double) -> Void) async throws {
         if isModelDownloaded { return }
         try FileManager.default.createDirectory(at: modelDirectory, withIntermediateDirectories: true)
 
