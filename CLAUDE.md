@@ -4,7 +4,7 @@
 
 A native macOS app for audio stem separation — isolate vocals, drums, bass and other instruments from any song using state-of-the-art deep learning, running entirely on the Apple Silicon GPU. Four stems: a quartet.
 
-Platform: macOS 14+. Build system: Xcode project. Bundle ID `dev.gwennha.Quatuor`.
+Platform: macOS 26.4+. Build system: Xcode project. Bundle ID `dev.gwennha.Quatuor`.
 
 ## Build and test
 
