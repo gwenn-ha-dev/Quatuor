@@ -6,4 +6,4 @@
 HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT)/ThirdParty/lame/include
 LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/ThirdParty/lame/lib
 OTHER_LDFLAGS = $(inherited) -lmp3lame
-SWIFT_OBJC_BRIDGING_HEADER = Stem/AudioIO/lame-bridge.h
+SWIFT_OBJC_BRIDGING_HEADER = Quatuor/AudioIO/lame-bridge.h
