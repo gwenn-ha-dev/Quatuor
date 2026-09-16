@@ -5,7 +5,7 @@ import AVFoundation
 /// Encodes PCM audio to MP3 using libmp3lame (VBR V2, ~190 kbps).
 ///
 /// Requires `libmp3lame.a` to be compiled and linked. See `Scripts/build_lame.sh`
-/// and the bridging header at `Stem/AudioIO/lame-bridge.h`.
+/// and the bridging header at `Quatuor/AudioIO/lame-bridge.h`.
 @MainActor
 final class MP3Encoder {
     static let shared = MP3Encoder()

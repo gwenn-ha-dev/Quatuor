@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct StemApp: App {
+struct QuatuorApp: App {
     @State private var appState = AppState()
 
     var body: some Scene {

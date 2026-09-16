@@ -1,13 +1,13 @@
 //
-//  StemUITestsLaunchTests.swift
-//  StemUITests
+//  QuatuorUITestsLaunchTests.swift
+//  QuatuorUITests
 //
 //  Created by gwenn-ha-dev on 05/05/2026.
 //
 
 import XCTest
 
-final class StemUITestsLaunchTests: XCTestCase {
+final class QuatuorUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
