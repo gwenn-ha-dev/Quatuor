@@ -11,6 +11,8 @@ Versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
   hand before the charter, while the generated `.icns` was versioned and unused.
 
 ### Changed
+- The project compiles in the Swift 6 language mode, which both README badges
+  already claimed; it was building in Swift 5 mode.
 - Stem names and error messages go through `Localizable.xcstrings` like every
   other user-visible string; they were hard-coded in French.
 - The test suite covers audio decoding, MP3 encoding and temporary-file

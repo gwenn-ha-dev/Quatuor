@@ -29,7 +29,7 @@ final class SeparationPipeline {
 
     func run(
         source: LoadedSource,
-        progress: @escaping (Double) -> Void
+        progress: @escaping @Sendable (Double) -> Void
     ) async throws -> SeparationResult {
         let separator = try makeSeparator()
         let token = DemucsCancelToken()
@@ -119,8 +119,12 @@ final class SeparationPipeline {
         guard result == KERN_SUCCESS else {
             return ProcessInfo.processInfo.physicalMemory / 2
         }
-        let pageSize = UInt64(vm_kernel_page_size)
-        return (UInt64(stats.free_count) + UInt64(stats.inactive_count) + UInt64(stats.purgeable_count)) * pageSize
+        var pageSize: vm_size_t = 0
+        guard host_page_size(mach_host_self(), &pageSize) == KERN_SUCCESS else {
+            return ProcessInfo.processInfo.physicalMemory / 2
+        }
+        return (UInt64(stats.free_count) + UInt64(stats.inactive_count) + UInt64(stats.purgeable_count))
+            * UInt64(pageSize)
     }
 
     nonisolated private static func downsampledPeaks(from audio: DemucsAudio, target: Int) -> [Float] {
