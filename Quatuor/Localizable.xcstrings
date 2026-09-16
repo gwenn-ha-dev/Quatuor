@@ -69,6 +69,74 @@
         }
       }
     },
+    "Autres": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autres"
+          }
+        }
+      }
+    },
+    "Basse": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bass"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basse"
+          }
+        }
+      }
+    },
+    "Batterie": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drums"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batterie"
+          }
+        }
+      }
+    },
+    "Chargement du modèle htdemucs_ft échoué : %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading the htdemucs_ft model failed: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement du modèle htdemucs_ft échoué : %@"
+          }
+        }
+      }
+    },
     "Erreur d'export": {
       "extractionState": "manual",
       "localizations": {
@@ -86,6 +154,40 @@
         }
       }
     },
+    "Export annulé": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export cancelled"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export annulé"
+          }
+        }
+      }
+    },
+    "Exporter ici": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export here"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exporter ici"
+          }
+        }
+      }
+    },
     "Glisse un fichier audio ici": {
       "extractionState": "manual",
       "localizations": {
@@ -99,6 +201,57 @@
           "stringUnit": {
             "state": "translated",
             "value": "Glisse un fichier audio ici"
+          }
+        }
+      }
+    },
+    "Impossible de lire %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot read %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de lire %@"
+          }
+        }
+      }
+    },
+    "Impossible de lire %@ : %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot read %1$@: %2$@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de lire %@ : %@"
+          }
+        }
+      }
+    },
+    "Impossible de lire le fichier déposé : %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot read the dropped file: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de lire le fichier déposé : %@"
           }
         }
       }
@@ -222,6 +375,23 @@
         }
       }
     },
+    "Stem inconnu retourné par le modèle : %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown stem returned by the model: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stem inconnu retourné par le modèle : %@"
+          }
+        }
+      }
+    },
     "Séparation en cours…": {
       "extractionState": "manual",
       "localizations": {
@@ -235,6 +405,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Séparation en cours…"
+          }
+        }
+      }
+    },
+    "Séparation échouée : %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Separation failed: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Séparation échouée : %@"
           }
         }
       }
@@ -290,6 +477,23 @@
         }
       }
     },
+    "Voix": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vocals"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voix"
+          }
+        }
+      }
+    },
     "htdemucs_ft · ~336 Mo · première utilisation uniquement": {
       "extractionState": "manual",
       "localizations": {
@@ -303,6 +507,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "htdemucs_ft · ~336 Mo · première utilisation uniquement"
+          }
+        }
+      }
+    },
+    "Écriture MP3 échouée : %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MP3 write failed: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Écriture MP3 échouée : %@"
           }
         }
       }

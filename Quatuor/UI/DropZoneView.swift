@@ -61,7 +61,7 @@ struct DropZoneView: View {
             guard let url = try await provider.loadFileURL() else { return }
             await loadAudio(at: url)
         } catch {
-            state.phase = .failed("Impossible de lire le fichier déposé : \(error.localizedDescription)")
+            state.phase = .failed(String(localized: "Impossible de lire le fichier déposé : \(error.localizedDescription)"))
         }
     }
 
@@ -84,7 +84,7 @@ struct DropZoneView: View {
             let source = try await AudioDecoder.preview(url: url)
             state.phase = .loaded(source)
         } catch {
-            state.phase = .failed("Impossible de lire \(url.lastPathComponent) : \(error.localizedDescription)")
+            state.phase = .failed(String(localized: "Impossible de lire \(url.lastPathComponent) : \(error.localizedDescription)"))
         }
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E40410A62FAA14F00065468D /* DemucsMLX in Frameworks */ = {isa = PBXBuildFile; productRef = E40410A52FAA14F00065468D /* DemucsMLX */; };
-		E40410AF2FAA33580065468D /* Lame.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E40410AE2FAA33580065468D /* Lame.xcconfig */; };
+		E4A1C0022FAA00010065468D /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4A1C0012FAA00010065468D /* AppIcon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -19,20 +19,13 @@
 			remoteGlobalIDString = E48562D62FAA0C9F00AE0E92;
 			remoteInfo = Quatuor;
 		};
-		E48562EF2FAA0CA000AE0E92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E48562CF2FAA0C9F00AE0E92 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E48562D62FAA0C9F00AE0E92;
-			remoteInfo = Quatuor;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4A1C0012FAA00010065468D /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Resources/AppIcon.icns; sourceTree = "<group>"; };
 		E40410AE2FAA33580065468D /* Lame.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Lame.xcconfig; sourceTree = "<group>"; };
 		E48562D72FAA0C9F00AE0E92 /* Quatuor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quatuor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48562E42FAA0CA000AE0E92 /* QuatuorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuatuorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E48562EE2FAA0CA000AE0E92 /* QuatuorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuatuorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,11 +37,6 @@
 		E48562E72FAA0CA000AE0E92 /* QuatuorTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = QuatuorTests;
-			sourceTree = "<group>";
-		};
-		E48562F12FAA0CA000AE0E92 /* QuatuorUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QuatuorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,13 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E48562EB2FAA0CA000AE0E92 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,9 +65,9 @@
 			children = (
 				E48562D92FAA0C9F00AE0E92 /* Quatuor */,
 				E48562E72FAA0CA000AE0E92 /* QuatuorTests */,
-				E48562F12FAA0CA000AE0E92 /* QuatuorUITests */,
 				E48562D82FAA0C9F00AE0E92 /* Products */,
 				E40410AE2FAA33580065468D /* Lame.xcconfig */,
+				E4A1C0012FAA00010065468D /* AppIcon.icns */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +76,6 @@
 			children = (
 				E48562D72FAA0C9F00AE0E92 /* Quatuor.app */,
 				E48562E42FAA0CA000AE0E92 /* QuatuorTests.xctest */,
-				E48562EE2FAA0CA000AE0E92 /* QuatuorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,29 +129,6 @@
 			productReference = E48562E42FAA0CA000AE0E92 /* QuatuorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E48562ED2FAA0CA000AE0E92 /* QuatuorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E48562FE2FAA0CA000AE0E92 /* Build configuration list for PBXNativeTarget "QuatuorUITests" */;
-			buildPhases = (
-				E48562EA2FAA0CA000AE0E92 /* Sources */,
-				E48562EB2FAA0CA000AE0E92 /* Frameworks */,
-				E48562EC2FAA0CA000AE0E92 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E48562F02FAA0CA000AE0E92 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E48562F12FAA0CA000AE0E92 /* QuatuorUITests */,
-			);
-			name = QuatuorUITests;
-			packageProductDependencies = (
-			);
-			productName = QuatuorUITests;
-			productReference = E48562EE2FAA0CA000AE0E92 /* QuatuorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,10 +143,6 @@
 						CreatedOnToolsVersion = 26.4.1;
 					};
 					E48562E32FAA0CA000AE0E92 = {
-						CreatedOnToolsVersion = 26.4.1;
-						TestTargetID = E48562D62FAA0C9F00AE0E92;
-					};
-					E48562ED2FAA0CA000AE0E92 = {
 						CreatedOnToolsVersion = 26.4.1;
 						TestTargetID = E48562D62FAA0C9F00AE0E92;
 					};
@@ -214,7 +167,6 @@
 			targets = (
 				E48562D62FAA0C9F00AE0E92 /* Quatuor */,
 				E48562E32FAA0CA000AE0E92 /* QuatuorTests */,
-				E48562ED2FAA0CA000AE0E92 /* QuatuorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,18 +176,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40410AF2FAA33580065468D /* Lame.xcconfig in Resources */,
+				E4A1C0022FAA00010065468D /* AppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E48562E22FAA0CA000AE0E92 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E48562EC2FAA0CA000AE0E92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,13 +204,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E48562EA2FAA0CA000AE0E92 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -274,11 +212,6 @@
 			target = E48562D62FAA0C9F00AE0E92 /* Quatuor */;
 			targetProxy = E48562E52FAA0CA000AE0E92 /* PBXContainerItemProxy */;
 		};
-		E48562F02FAA0CA000AE0E92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E48562D62FAA0C9F00AE0E92 /* Quatuor */;
-			targetProxy = E48562EF2FAA0CA000AE0E92 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -286,7 +219,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -350,7 +282,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -406,8 +337,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E40410AE2FAA33580065468D /* Lame.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quatuor/Quatuor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -428,6 +357,7 @@
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 gwenn-ha-dev";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,8 +381,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E40410AE2FAA33580065468D /* Lame.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quatuor/Quatuor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -473,6 +401,7 @@
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 gwenn-ha-dev";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -552,46 +481,6 @@
 			};
 			name = Release;
 		};
-		E48562FF2FAA0CA000AE0E92 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JJAB4C2285;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.gwennha.QuatuorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Quatuor;
-			};
-			name = Debug;
-		};
-		E48563002FAA0CA000AE0E92 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JJAB4C2285;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.gwennha.QuatuorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Quatuor;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -618,15 +507,6 @@
 			buildConfigurations = (
 				E48562FC2FAA0CA000AE0E92 /* Debug */,
 				E48562FD2FAA0CA000AE0E92 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E48562FE2FAA0CA000AE0E92 /* Build configuration list for PBXNativeTarget "QuatuorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E48562FF2FAA0CA000AE0E92 /* Debug */,
-				E48563002FAA0CA000AE0E92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

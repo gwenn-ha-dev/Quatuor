@@ -41,17 +41,6 @@
                ReferencedContainer = "container:Quatuor.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E48562ED2FAA0CA000AE0E92"
-               BuildableName = "QuatuorUITests.xctest"
-               BlueprintName = "QuatuorUITests"
-               ReferencedContainer = "container:Quatuor.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

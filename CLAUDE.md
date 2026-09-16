@@ -27,7 +27,9 @@ the `Makefile`. It is the same interface in every project here.
   *Dependencies* section.
 - **`README.md` and `README.fr.md` stay in sync.** Editing one means editing the other.
 - **The icon is generated**, never hand-placed: `outils/icone.swift` is the
-  source, `make icon` rebuilds `Resources/AppIcon.icns`.
+  source, `make icon` rebuilds `Resources/AppIcon.icns`, and the app bundles
+  that file directly (`CFBundleIconFile`). There is no `AppIcon` in the asset
+  catalogue: a second copy there is how the app shipped a stale icon for months.
 - Identifiers, commit messages and both READMEs are in **English**; comments may
   be in English or French (charter §2).
 
@@ -43,17 +45,13 @@ CONTRIBUTING.md
 LICENSE
 Lame.xcconfig
 Makefile
-Models/
 Quatuor.xcodeproj/
 Quatuor/
 QuatuorTests/
-QuatuorUITests/
 README.md
 Resources/
 Scripts/
 ThirdParty/
-capture.png
-logo.png
 outils/
 ```
 

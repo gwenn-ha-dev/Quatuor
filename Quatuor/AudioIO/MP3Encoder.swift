@@ -11,14 +11,12 @@ final class MP3Encoder {
     static let shared = MP3Encoder()
 
     enum Error: LocalizedError {
-        case lameNotLinked
         case userCancelled
         case writeFailed(String)
         var errorDescription: String? {
             switch self {
-            case .lameNotLinked:    "libmp3lame n'est pas encore liée — exécute Scripts/build_lame.sh puis ajoute la static lib au target."
-            case .userCancelled:    "Export annulé"
-            case .writeFailed(let m): "Écriture MP3 échouée : \(m)"
+            case .userCancelled:    String(localized: "Export annulé")
+            case .writeFailed(let m): String(localized: "Écriture MP3 échouée : \(m)")
             }
         }
     }
@@ -59,7 +57,7 @@ final class MP3Encoder {
         panel.canChooseDirectories = true
         panel.canChooseFiles = false
         panel.canCreateDirectories = true
-        panel.prompt = "Exporter ici"
+        panel.prompt = String(localized: "Exporter ici")
 
         let response = await panel.beginAsync()
         guard response == .OK, let url = panel.url else {
@@ -68,7 +66,8 @@ final class MP3Encoder {
         return url
     }
 
-    nonisolated private func encode(pcmFileURL: URL, to destination: URL) async throws {
+    /// Internal rather than private so the test suite can encode without a save panel.
+    nonisolated func encode(pcmFileURL: URL, to destination: URL) async throws {
         let sourceFile = try AVAudioFile(forReading: pcmFileURL)
         let format = sourceFile.processingFormat
         let sampleRate = Int32(format.sampleRate)
