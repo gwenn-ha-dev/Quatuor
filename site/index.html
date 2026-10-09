@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quatuor — split any song into four stems, on your Mac</title>
+<meta name="description" content="Free, open-source macOS app that splits any song into vocals, drums, bass and other instruments with Meta's htdemucs_ft model, run on the Apple Silicon GPU through MLX. Play the stems together, mute or solo them, export them as MP3.">
+<link rel="canonical" href="https://gwenn-ha-dev.github.io/Quatuor/">
+<link rel="icon" href="images/icon.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quatuor — split any song into four stems, on your Mac">
+<meta property="og:description" content="Free, open-source macOS app that splits any song into vocals, drums, bass and other instruments with Meta's htdemucs_ft model, run on the Apple Silicon GPU through MLX. Play the stems together, mute or solo them, export them as MP3.">
+<meta property="og:url" content="https://gwenn-ha-dev.github.io/Quatuor/">
+<meta property="og:image" content="https://gwenn-ha-dev.github.io/Quatuor/images/social-preview.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gwenn-ha-dev.github.io/Quatuor/images/social-preview.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Quatuor",
+ "operatingSystem":"macOS 26.4 or later","applicationCategory":"MultimediaApplication",
+ "description":"Free, open-source macOS app that splits any song into vocals, drums, bass and other instruments with Meta's htdemucs_ft model, run on the Apple Silicon GPU through MLX. Play the stems together, mute or solo them, export them as MP3.",
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://opensource.org/licenses/MIT",
+ "downloadUrl":"https://github.com/gwenn-ha-dev/Quatuor/releases/latest",
+ "codeRepository":"https://github.com/gwenn-ha-dev/Quatuor","image":"https://gwenn-ha-dev.github.io/Quatuor/images/stems.png"}
+</script>
+<style>
+  :root {
+    --bg: #ffffff; --panel: #f4f5f7; --line: #e2e4e8; --text: #16181d; --muted: #5d6170;
+    --accent: #23708f; --accent-text: #fff; --link: #1f5fbf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111214; --panel: #1b1c1f; --line: #2c2d31; --text: #ececee; --muted: #a2a3a8; --link: #8ab4ff; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; }
+  a { color: var(--link); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 72px 0 40px; text-align: center; }
+  .icon { width: 96px; height: 96px; }
+  h1 { font-size: clamp(34px, 6vw, 56px); margin: 12px 0 4px; letter-spacing: -0.02em; }
+  .lead { font-size: clamp(19px, 2.6vw, 23px); max-width: 760px; margin: 0 auto 28px; }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; text-decoration: none;
+         font-weight: 600; border: 1px solid var(--line); color: var(--text); background: var(--panel); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+  .req { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  figure { margin: 0; }
+  .shot img, .hero img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px; }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; text-align: center; }
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 28px; margin: 0 0 20px; letter-spacing: -0.01em; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+  .split.rev .text { order: 2; }
+  @media (max-width: 760px) { .split { grid-template-columns: 1fr; } .split.rev .text { order: 0; } }
+  code { font: 14.5px ui-monospace, "SF Mono", Menlo, monospace; background: var(--panel);
+         padding: 2px 6px; border-radius: 6px; border: 1px solid var(--line); }
+  footer { padding: 36px 0 56px; color: var(--muted); font-size: 14px; text-align: center;
+           border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <img class="icon" src="images/icon.png" width="96" height="96" alt="">
+  <h1>Quatuor</h1>
+  <p class="lead">Drop a song, get its vocals, drums, bass and everything else as four separate tracks. Deep learning on the Apple Silicon GPU, nothing sent anywhere: play the stems together, mute the vocals, export what you need.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/gwenn-ha-dev/Quatuor/releases/latest">Download for macOS</a>
+    <a class="btn" href="https://github.com/gwenn-ha-dev/Quatuor">Source on GitHub</a>
+  </div>
+  <p class="req">Free and open source (MIT) · macOS 26.4 or later · signed and notarized · English and French</p>
+</header>
+
+<div class="wrap hero">
+  <figure>
+    <img src="images/stems.png" alt="Quatuor after separating a 4:32 song: four rows, Vocals, Drums, Bass and Other, each with its waveform, volume, mute, solo and MP3 export">
+    <figcaption>A 4:32 song split in about a minute on an M1 Pro. The song is “Happy Happy HardPopCoreTastic” by Mesostic, in the public domain (CC0).</figcaption>
+  </figure>
+</div>
+
+<section class="wrap" style="margin-top:48px">
+  <h2>Why Quatuor</h2>
+  <div class="grid3">
+    <div class="card"><h3>Four stems</h3><p>Vocals, drums, bass and other, from Meta’s <code>htdemucs_ft</code> — one fine-tuned Hybrid Transformer Demucs model per stem.</p></div>
+    <div class="card"><h3>On your GPU</h3><p>MLX runs the models on the Apple Silicon GPU. The song never leaves the Mac; only the model is downloaded, once (about 670 MB).</p></div>
+    <div class="card"><h3>A small mixing desk</h3><p>The four stems play in lock-step. Mute, solo and set the volume of each one — mute the vocals and you have a karaoke track.</p></div>
+    <div class="card"><h3>MP3 export</h3><p>One stem or all four at once, VBR V2 through LAME.</p></div>
+    <div class="card"><h3>Any audio file</h3><p>MP3, WAV, AIFF or M4A: drop it on the window or pick it with Browse….</p></div>
+    <div class="card"><h3>Open source</h3><p>Swift 6 and SwiftUI, MIT licence. English and French, following the system language.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="split">
+    <div class="text">
+      <h2>See it before you split it</h2>
+      <p>The song’s waveform, duration and sample rate come first. One click on Separate stems, and the
+        progress bar follows the models through the song.</p>
+    </div>
+    <figure class="shot"><img src="images/loaded.png" alt="A song loaded and not yet separated: its name, 4:32 · 44.1 kHz · 2 channels, its waveform, and the buttons Cancel and Separate stems" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="split rev">
+    <div class="text">
+      <h2>Nothing to set up</h2>
+      <p>No account, no settings. The window is a drop zone; the first separation fetches the model,
+        every later one runs offline.</p>
+    </div>
+    <figure class="shot"><img src="images/drop.png" alt="The empty window: a dashed drop zone saying Drop an audio file here, the formats MP3 · WAV · AIFF · M4A and a Browse… button" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="wrap" style="text-align:center">
+  <h2>Get it</h2>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/gwenn-ha-dev/Quatuor/releases/latest">Download the .dmg</a>
+    <a class="btn" href="https://github.com/gwenn-ha-dev/Quatuor#readme">Read the README</a>
+    <a class="btn" href="https://github.com/gwenn-ha-dev/Quatuor/blob/main/README.fr.md">En français</a>
+  </div>
+  <p class="req">Open the .dmg, drag Quatuor onto Applications. It is signed with a Developer ID and notarized by Apple: it opens with a double click.</p>
+</section>
+
+<footer class="wrap">
+  Quatuor · MIT · <a href="https://github.com/gwenn-ha-dev/Quatuor">github.com/gwenn-ha-dev/Quatuor</a>
+</footer>
+</body>
+</html>
