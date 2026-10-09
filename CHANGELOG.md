@@ -51,11 +51,18 @@ Quatuor installs beside it rather than over it, and downloads its model again.
 - `logo.png`, `capture.png`, `Scripts/fetch_models.sh`, the asset catalogue and
   three unreachable error paths — nothing referenced any of them.
 
-## [0.1.0] — 2026-09-16
+## [1.2.0] — 2026-05-05
+
+Releases 1.0.0, 1.1.0 and 1.2.0 were published the same day under the name
+Stem, with another bundle identifier: Quatuor installs beside Stem, not over it.
 
 ### Added
-- Initial release.
+- A progress bar for the custom model download (1.1.0).
+- A file picker (1.2.0).
+
+### Fixed
+- A crash at the end of some MP3 files; temporary WAV files are cleaned up (1.2.0).
 
 [Unreleased]: https://github.com/gwenn-ha-dev/Quatuor/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/gwenn-ha-dev/Quatuor/releases/tag/v2.0.0
-[0.1.0]: https://github.com/gwenn-ha-dev/Quatuor/releases/tag/v0.1.0
+[1.2.0]: https://github.com/gwenn-ha-dev/Quatuor/tree/v1.2.0
