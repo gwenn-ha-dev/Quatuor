@@ -1,19 +1,61 @@
 {
   "sourceLanguage": "fr",
   "strings": {
-    "%lld %": {
+    "%lld %%": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld %"
+            "value": "%lld%%"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld %"
+            "value": "%lld %%"
+          }
+        }
+      }
+    },
+    "%lld canaux": {
+      "comment": "Channel count of the loaded file.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld channel"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld channels"
+                }
+              }
+            }
+          }
+        },
+        "fr": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld canal"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld canaux"
+                }
+              }
+            }
           }
         }
       }
@@ -375,6 +417,24 @@
         }
       }
     },
+    "S": {
+      "comment": "Solo button of a stem row: a single letter, as on a mixing desk.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S"
+          }
+        }
+      }
+    },
     "Stem inconnu retourné par le modèle : %@": {
       "extractionState": "manual",
       "localizations": {
@@ -494,19 +554,19 @@
         }
       }
     },
-    "htdemucs_ft · ~336 Mo · première utilisation uniquement": {
+    "htdemucs_ft · ~670 Mo · première utilisation uniquement": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "htdemucs_ft · ~336 MB · first run only"
+            "value": "htdemucs_ft · ~670 MB · first run only"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "htdemucs_ft · ~336 Mo · première utilisation uniquement"
+            "value": "htdemucs_ft · ~670 Mo · première utilisation uniquement"
           }
         }
       }

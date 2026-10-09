@@ -27,6 +27,48 @@ final class AppState {
     func reset() {
         phase = .idle
     }
+
+    /// Reads a file's metadata and waveform, then shows it ready to separate.
+    /// The drop zone, the open panel and `open -a Quatuor <file>` all come here.
+    func open(_ url: URL) async {
+        _ = url.startAccessingSecurityScopedResource()
+        phase = .loading(fileName: url.lastPathComponent)
+        do {
+            let source = try await AudioDecoder.preview(url: url)
+            phase = .loaded(source)
+            // Launch key, for the README captures: `-open.separate YES` goes
+            // straight to the stems, since nothing can click "Separate" for them.
+            if UserDefaults.standard.bool(forKey: "open.separate") {
+                await separate(source)
+            }
+        } catch {
+            phase = .failed(String(localized: "Impossible de lire \(url.lastPathComponent) : \(error.localizedDescription)"))
+        }
+    }
+
+    /// Downloads the model on first use, then separates `source` into its four stems.
+    func separate(_ source: LoadedSource) async {
+        do {
+            if !ModelManager.shared.isModelDownloaded {
+                phase = .downloading(progress: 0)
+                try await ModelManager.shared.ensureModel { progress in
+                    Task { @MainActor in
+                        self.phase = .downloading(progress: progress)
+                    }
+                }
+            }
+
+            phase = .processing(progress: 0)
+            let result = try await SeparationPipeline.shared.run(source: source) { progress in
+                Task { @MainActor in
+                    self.phase = .processing(progress: progress)
+                }
+            }
+            phase = .done(result)
+        } catch {
+            phase = .failed(error.localizedDescription)
+        }
+    }
 }
 
 // MARK: - Domain Models

@@ -13,7 +13,7 @@ struct DownloadingView: View {
             Text("Téléchargement du modèle…")
                 .font(.title3.weight(.medium))
 
-            Text("htdemucs_ft · ~336 Mo · première utilisation uniquement")
+            Text("htdemucs_ft · ~670 Mo · première utilisation uniquement")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 

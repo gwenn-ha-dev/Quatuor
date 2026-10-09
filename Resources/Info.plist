@@ -9,5 +9,11 @@
 	     (GENERATE_INFOPLIST_FILE) and merged on top. -->
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
+	<!-- CHARTE.md §6: the two languages the app ships, declared as well as bundled. -->
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>fr</string>
+	</array>
 </dict>
 </plist>

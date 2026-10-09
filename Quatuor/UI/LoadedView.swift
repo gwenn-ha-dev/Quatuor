@@ -29,7 +29,7 @@ struct LoadedView: View {
                 .keyboardShortcut(.escape, modifiers: [])
 
                 Button {
-                    Task { await separate() }
+                    Task { await state.separate(source) }
                 } label: {
                     Label("Séparer les stems", systemImage: "waveform.path.badge.plus")
                         .padding(.horizontal, 8)
@@ -43,37 +43,15 @@ struct LoadedView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    /// "3:42 · 44.1 kHz · 2 channels" — or "3:42 · 44,1 kHz · 2 canaux": every
+    /// part follows the app's language, including the decimal separator.
     private var metadataLabel: String {
-        let mins = Int(source.durationSeconds) / 60
-        let secs = Int(source.durationSeconds) % 60
-        return String(
-            format: "%d:%02d · %.1f kHz · %d ch",
-            mins, secs,
-            source.sampleRate / 1000,
-            source.channelCount
-        )
-    }
-
-    private func separate() async {
-        do {
-            if !ModelManager.shared.isModelDownloaded {
-                state.phase = .downloading(progress: 0)
-                try await ModelManager.shared.ensureModel { progress in
-                    Task { @MainActor in
-                        state.phase = .downloading(progress: progress)
-                    }
-                }
-            }
-
-            state.phase = .processing(progress: 0)
-            let result = try await SeparationPipeline.shared.run(source: source) { progress in
-                Task { @MainActor in
-                    state.phase = .processing(progress: progress)
-                }
-            }
-            state.phase = .done(result)
-        } catch {
-            state.phase = .failed(error.localizedDescription)
-        }
+        let duration = Duration.seconds(source.durationSeconds)
+            .formatted(.time(pattern: .minuteSecond(padMinuteToLength: 1, roundFractionalSeconds: .towardZero)))
+        let rate = Measurement(value: source.sampleRate / 1000, unit: UnitFrequency.kilohertz)
+            .formatted(.measurement(width: .abbreviated,
+                                    numberFormatStyle: .number.precision(.fractionLength(1))))
+        let channels = String(localized: "\(source.channelCount) canaux")
+        return "\(duration) · \(rate) · \(channels)"
     }
 }

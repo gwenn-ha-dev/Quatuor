@@ -5,7 +5,7 @@ import MLX
 /// High-level wrapper around `DemucsSeparator` from demucs-mlx-swift.
 ///
 /// - Lazily loads the htdemucs_ft model (fp16 safetensors) on first call.
-///   Weights are auto-downloaded from HuggingFace (~336 MB).
+///   Weights are auto-downloaded from HuggingFace (~670 MB).
 /// - Bridges the closure-based `DemucsSeparator.separate()` API to Swift concurrency.
 /// - Writes each stem to a temporary 16-bit WAV file for playback and MP3 export.
 @MainActor

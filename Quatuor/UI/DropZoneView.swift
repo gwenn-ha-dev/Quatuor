@@ -59,7 +59,7 @@ struct DropZoneView: View {
     private func handleDrop(_ provider: NSItemProvider) async {
         do {
             guard let url = try await provider.loadFileURL() else { return }
-            await loadAudio(at: url)
+            await state.open(url)
         } catch {
             state.phase = .failed(String(localized: "Impossible de lire le fichier déposé : \(error.localizedDescription)"))
         }
@@ -73,19 +73,7 @@ struct DropZoneView: View {
         panel.canChooseDirectories = false
         let response = await panel.begin()
         guard response == .OK, let url = panel.url else { return }
-        await loadAudio(at: url)
-    }
-
-    @MainActor
-    private func loadAudio(at url: URL) async {
-        _ = url.startAccessingSecurityScopedResource()
-        state.phase = .loading(fileName: url.lastPathComponent)
-        do {
-            let source = try await AudioDecoder.preview(url: url)
-            state.phase = .loaded(source)
-        } catch {
-            state.phase = .failed(String(localized: "Impossible de lire \(url.lastPathComponent) : \(error.localizedDescription)"))
-        }
+        await state.open(url)
     }
 }
 
