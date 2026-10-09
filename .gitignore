@@ -14,7 +14,7 @@ xcuserdata/
 # Swift Package Manager
 .build/
 .swiftpm/
-Package.resolved
+# Package.resolved is versioned: an app build must be reproducible (2026-10-09).
 
 # Third-party binaries built by scripts (reproducible via fetch + build scripts)
 ThirdParty/lame-src/

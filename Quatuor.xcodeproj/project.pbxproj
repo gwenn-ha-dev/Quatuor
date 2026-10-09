@@ -519,8 +519,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kylehowells/demucs-mlx-swift";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = revision;
+				revision = c81c47178828db2d8bc66e64f80c745c64abdc94;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
