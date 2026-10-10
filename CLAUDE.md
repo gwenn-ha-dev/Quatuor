@@ -52,7 +52,7 @@ the `Makefile`. It is the same interface in every project here.
   `v<version>` and attach `build/Quatuor-<version>.dmg` — see
   `../../Charte/DISTRIBUTION-AGENT.md`, phase 3. The version is `MARKETING_VERSION`
   in `Quatuor.xcodeproj`. Releases v1.0.0–v1.2.0 were published as **Stem**, under
-  another bundle ID; 2.0.0 is the first as Quatuor.
+  another bundle ID; 1.3.0 is the first as Quatuor.
 - `make package` archives the scheme and copies the app to `build/Quatuor.app`.
   Xcode signs it "Apple Development"; `make sign` re-signs it with the Developer ID,
   hardened runtime, keeping its entitlements (sandbox, user-selected files,

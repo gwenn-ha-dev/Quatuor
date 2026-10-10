@@ -6,14 +6,14 @@ Versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## [2.0.0] — 2026-10-09
+## [1.3.0] — 2026-10-09
 
 First release under the name Quatuor, as a signed and notarized `.dmg`. The
 earlier releases were published as Stem, under another bundle identifier:
 Quatuor installs beside it rather than over it, and downloads its model again.
 
 ### Added
-- The app is distributed as `Quatuor-2.0.0.dmg`, signed with a Developer ID,
+- The app is distributed as `Quatuor-1.3.0.dmg`, signed with a Developer ID,
   notarized and stapled.
 - README captures in English and French, taken by `outils/captures.sh` on a
   public-domain song; a social preview; a project site (`site/`).
@@ -63,6 +63,6 @@ Stem, with another bundle identifier: Quatuor installs beside Stem, not over it.
 ### Fixed
 - A crash at the end of some MP3 files; temporary WAV files are cleaned up (1.2.0).
 
-[Unreleased]: https://github.com/gwenn-ha-dev/Quatuor/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/gwenn-ha-dev/Quatuor/releases/tag/v2.0.0
+[Unreleased]: https://github.com/gwenn-ha-dev/Quatuor/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/gwenn-ha-dev/Quatuor/releases/tag/v1.3.0
 [1.2.0]: https://github.com/gwenn-ha-dev/Quatuor/tree/v1.2.0
